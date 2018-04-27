@@ -79,3 +79,10 @@ def applymomentum(joint):
 	'''
 	DO STUFF
 	'''
+
+	# get momentum of joint and apply to pred and suc
+
+	# while pred is not Null or suc is not Null or pred ID# != suc ID# or pred.pred ID# != suc ID#
+	while joint.getpred() != Null and joint.getsuc() != Null and joint.getpred().getID() != joint.getsuc().getID() and joint.getpred().getpred().getID() != joint.getsuc().getID():
+		# keep propagating momentum
+		joint.getmomentumdir()

@@ -28,6 +28,26 @@ class Joint:
 		self.pred = joint
 
 
+	def getpred(self):
+		return self.pred
+
+
+	def getsuc(self):
+		return self.suc
+
+
+	def getID(self):
+		return self.IDnumber
+
+
+	def getmomentumloc(self):
+		return self.mlocation
+
+
+	def getmomentumdir(self):
+		return self.mdirection
+
+
 	def addmomentum(self, mloc, mdir):
 		'''
 		Add current momentum and new momentum as vectors.
