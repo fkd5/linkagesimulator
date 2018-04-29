@@ -9,12 +9,12 @@ class Joint:
 		init
 		'''
 
-		IDnumber = ID
-		location = loc
-		pred = pred
-		suc = suc
-		weight = weight
-		mdirection = mdir
+		self.IDnumber = ID
+		self.location = loc
+		self.pred = pred
+		self.suc = suc
+		self.weight = weight
+		self.mdirection = mdir
 
 
 	def changesuc(self, joint):
@@ -74,6 +74,4 @@ class Joint:
 		self.mdirection[1] = self.mdirection[1] + mdir[1]
 
 	def findnewlocfromangle():
-
-
-
+		pass
