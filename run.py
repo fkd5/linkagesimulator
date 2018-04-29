@@ -97,7 +97,7 @@ def printjoints(joint):
 	weight_curr = joint.weight
 	
 	#d.ellipse((cent_x - radius, cent_y - radius, cent_x + radius, cent_y + radius), fill = (int(255*weight_curr), int(255*weight_curr), int(255*weight_curr)), outline = 'black')
-	d.ellipse((cent_x - radius, cent_y - radius, cent_x + radius, cent_y + radius), fill = 'black', outline = 'black')
+	d.ellipse((int(cent_x - radius), int(cent_y - radius), int(cent_x + radius), int(cent_y + radius)), fill = (255,255,255), outline = 'black')
 
 	#draw its number
 	d.text((cent_x, cent_y), joint.ID, font=font, fill='blue')
