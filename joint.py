@@ -4,19 +4,16 @@ class Joint:
 	A joint.
 	'''
 
-	def __init__(self, ID, loc, pred=Null, suc=Null, weight=1, mloc=0, mdir=0):
+	def __init__(self, ID, loc, pred=None, suc=None, weight=1, mdir=(0,0)):
 		'''
 		init
 		'''
-
-		LENGTH = 10
 
 		IDnumber = ID
 		location = loc
 		pred = pred
 		suc = suc
 		weight = weight
-		mlocation = mloc
 		mdirection = mdir
 
 
@@ -26,6 +23,10 @@ class Joint:
 
 	def changepred(self, joint):
 		self.pred = joint
+
+
+	def changeloc(self, movement):
+		self.loc = (self.loc[0] + movement[0], self.loc[1] + movement[1])
 
 
 	def getpred(self):
@@ -40,20 +41,39 @@ class Joint:
 		return self.IDnumber
 
 
-	def getmomentumloc(self):
-		return self.mlocation
+	def getloc0(self):
+		return self.location[0]
 
 
-	def getmomentumdir(self):
+	def getloc1(self):
+		return self.location[1]
+
+
+	def getweight(self):
+		return self.weight
+
+
+	def getmomentummag(self):
+		return math.sqrt(self.mdirection[0]**2 + self.mdirection[1]**2)
+
+
+	def getmomentum(self):
 		return self.mdirection
 
 
-	def addmomentum(self, mloc, mdir):
+	def getmomentumdir(self):
+		mag = self.getmomentummag()
+		return (self.mdirection[0]/mag, self.mdirection[1]/mag)
+
+
+	def addmomentum(self, mdir):
 		'''
 		Add current momentum and new momentum as vectors.
 		'''
+		self.mdirection[0] = self.mdirection[0] + mdir[0]
+		self.mdirection[1] = self.mdirection[1] + mdir[1]
 
-	def findnewlocfromangle()
+	def findnewlocfromangle():
 
 
 

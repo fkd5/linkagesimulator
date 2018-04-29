@@ -1,4 +1,4 @@
-
+LENGTH = 15
 
 
 if __name__ == "__main__":
@@ -80,9 +80,52 @@ def applymomentum(joint):
 	DO STUFF
 	'''
 
-	# get momentum of joint and apply to pred and suc
+	# # get momentum of joint and apply to pred and suc
+	# pred = joint.getpred()
+	# suc = joint.getsuc()
+	# mdir = joint.getmomentumdir()
+	# mmag = joint.getmomentummag()
 
-	# while pred is not Null or suc is not Null or pred ID# != suc ID# or pred.pred ID# != suc ID#
-	while joint.getpred() != Null and joint.getsuc() != Null and joint.getpred().getID() != joint.getsuc().getID() and joint.getpred().getpred().getID() != joint.getsuc().getID():
-		# keep propagating momentum
-		joint.getmomentumdir()
+	# if pred != Null:
+	# 	linkdir = joint.diroflink(pred)
+	# 	theta = angle(mdir, linkdir)
+	# 	axialmovement = mmag * Sin(theta)
+	# 	radialmovement = mmag * Cos(theta)
+
+	# # while pred is not Null or suc is not Null or pred ID# != suc ID# or pred.pred ID# != suc ID#
+	# 	while ((joint.getpred() == None and joint.getsuc() == None) == False) and joint.getpred().getID() != joint.getsuc().getID() and joint.getpred().getpred().getID() != joint.getsuc().getID():
+	# 	# keep propagating momentum
+	# 	joint.getmomentumdir()
+
+	firstID = joint.getID
+	suc = joint.getsuc()
+
+	while joint.suc != None and suc.getID != firstID:
+		# get angle between joint and suc
+		linkdir = (joint.getloc0() - suc.getloc0(), joint.getloc1() - suc.getloc1())
+		theta = angle(linkdir, joint.getmomentumdir())
+
+		# move joint in radial direction
+		radialdir = joint.getmomentumdir
+		movement = (suc.getweight() * joint.getmomentummag * math.cos(theta) * radialdir[0], suc.getweight() * joint.getmomentummag * math.cos(theta) * radialdir[1])
+		joint.changeloc(movement)
+		suc.addmomentum(movement)
+
+		# move joint in angular direction
+		circumference = math.pi() * LENGTH**2
+		spin = ((joint.getmomentummag + math.sin(theta))/circumference) * 2
+		thetaprime = angle((0,1), linkdir)
+		spinmove = (LENGTH * (math.sin(thetaprime + spin) - math.sin(thetaprime)). LENGTH * (math.cos(thetaprime) - math.cos(thetaprime + spin)))
+		if angle(spinmove, joint.getmomentumdir) < math.pi:
+			joint.changeloc(spinmove)
+		else:
+			joint.changeloc((-spinmove[0], spinmove[1]))
+
+
+def angle(vector1, vector2):
+	dotproduct = (vector1[0]*vector2[0], vector1[1]*vector2[1])
+	den = magnitude(vector1) * magnitude(vector2)
+	return math.acos(dotproduct/den)
+
+def magnitude(vector):
+	return math.sqrt(vector[0]**2 + vector[1]**2)
