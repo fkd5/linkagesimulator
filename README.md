@@ -9,5 +9,3 @@ Instructions to run code:
 1. Requires Python 2. However, to operate using Python 3, only a slight edit is necessary: change line (3) from Tkinter to tkinter. 
 2. Ensure you have downloaded the files: application.py, joint.py. 
 3. Run the code "application.py"
-
-error - >10 and fix the instruction screens. 
