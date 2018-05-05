@@ -26,7 +26,7 @@ Since this code was used purely as a demonstrator and as an intermediary step in
 The simulator takes in user input from the display window: desired number of joints. If the user would like to display a fixed joint, they will input the desired fixed angle of the joint. This fixed angle is relative to the horizontal, counterclockwise of the starting position of the joint. To simulate the potential degrees of motion, the code will rotate the free joints (in the counterclockwise direction) to a random angle. The resulting, final display will be a random orientation of the linkages, limited by certain fixed joints. Previous joint positions remain outlined on the screen to show simulator history. 
 
 Instructions to run code: 
-1. Requires Python 2. However, to operate using Python 3, only a slight edit is necessary: change line (3) from Tkinter to tkinter. 
+1. Requires Python 2. However, to operate using Python 3, only a slight edit is necessary: change line (1) from Tkinter to tkinter. 
 2. Ensure you have downloaded the files: "Simulator(tkinter).py", joint.py. 
 3. Run the code "application.py"
 
