@@ -32,5 +32,5 @@ Instructions to run code:
 
 ## Other notes
 
-The branche called "Fiona" has additional code that is not related to our final project, but will be kept for future work. 
+The branch called "Fiona" has additional code that is not related to our final project, but will be kept for future work. 
 
