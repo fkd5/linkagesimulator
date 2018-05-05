@@ -1,4 +1,4 @@
-from Tkinter import *
+from tkinter import *
 from joint import Joint
 import math
 import random
