@@ -10,7 +10,7 @@ This simulator can be used by students or engineers to demonstrate the possible 
 
 We are submitting two different coding methods. 
 
-Simulator(PIL).py was our first attempt for displaying our simulator. However, we soon realized the low potential of PIL in terms of being able to constantly update a picture. Therefore, we switched to Tkinter, demonstrated by the Simulator(tkinter).py file. 
+SimulatorDraft(PIL).py was our first attempt for displaying our simulator. However, we soon realized the low potential of PIL in terms of being able to constantly update a picture. Therefore, we switched to Tkinter, demonstrated by the Simulator(tkinter).py file. 
 
 ### To see the difference between two different graphics tools: 
 
@@ -29,3 +29,8 @@ Instructions to run code:
 1. Requires Python 2. However, to operate using Python 3, only a slight edit is necessary: change line (3) from Tkinter to tkinter. 
 2. Ensure you have downloaded the files: application.py, joint.py. 
 3. Run the code "application.py"
+
+## Other notes
+
+The branche called "Fiona" has additional code that is not related to our final project, but will be kept for future work. 
+
